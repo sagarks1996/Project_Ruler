@@ -35,7 +35,7 @@
             android:label="@string/activity_gallery_label">
         </activity>
         <activity android:name=".ManualActivity"
-            android:label="매뉴얼">
+            android:label="manual">
         </activity>
         <meta-data android:name="com.google.ar.core" android:value="required"/>
         <provider

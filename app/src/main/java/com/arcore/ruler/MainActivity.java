@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int IMAGE_GALLERY_REQUEST = 20;
     Button btn_measure;
-    Button btn_locate;
-    Button btn_gallery;
-    Button btn_exit;
+//    Button btn_locate;
+//    Button btn_gallery;
+//    Button btn_exit;
 
 
     @Override
@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        File dir_image = new File(Environment.getExternalStorageDirectory() + File.separator + "Ruler");
-        dir_image.mkdirs();
+//        File dir_image = new File(Environment.getExternalStorageDirectory() + File.separator + "Ruler");
+//        dir_image.mkdirs();
 
         btn_measure = (Button)findViewById(R.id.btn_measure);
-        btn_locate = (Button)findViewById(R.id.btn_locate);
-        btn_gallery = (Button)findViewById(R.id.btn_gallery);
-        btn_exit = (Button)findViewById(R.id.btn_exit);
+//        btn_locate = (Button)findViewById(R.id.btn_locate);
+//        btn_gallery = (Button)findViewById(R.id.btn_gallery);
+//        btn_exit = (Button)findViewById(R.id.btn_exit);
 
         btn_measure.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,33 +47,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_locate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LocateActivity.class);
-                startActivity(intent);
-            }
-        });
-        btn_gallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                File[] imageFiles;
-                imageFiles = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Ruler").listFiles();
-                if(imageFiles.length<1){
-                    Toast.makeText(getApplicationContext(),"저장된 사진이 없습니다.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent intent = new Intent(getApplicationContext(), GalleryActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
-        btn_exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        btn_locate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), LocateActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+
+
+//        btn_gallery.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                File[] imageFiles;
+//                imageFiles = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Ruler").listFiles();
+//                if(imageFiles.length<1){
+//                    Toast.makeText(getApplicationContext(),"No photos Saved.", Toast.LENGTH_SHORT).show();
+//                }
+//                else{
+//                    Intent intent = new Intent(getApplicationContext(), GalleryActivity.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        });
+//        btn_exit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -86,20 +90,20 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.a:
-                Toast.makeText(getApplicationContext(), "노원종/김성태", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Sagar", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.b:
                 Toast.makeText(getApplicationContext(), "Ruler v1.0", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.c:
-                Toast.makeText(getApplicationContext(), "메뉴얼로 이동합니다.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), ManualActivity.class);
-                startActivity(intent);
-                return true;
+//            case R.id.c:
+//                Toast.makeText(getApplicationContext(), "We move to manual.", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getApplicationContext(), ManualActivity.class);
+//                startActivity(intent);
+//                return true;
         }
         return false;
     }
-
+/*Camera Permission*/
     private void requestCameraPermission(){
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED){
@@ -122,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         requestCameraPermission();
         requestMemoryPermission();
     }
+/*Camera permission ends*/
+
 
     /*public void onGalleryClicked(View v) {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);

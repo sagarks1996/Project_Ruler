@@ -30,42 +30,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="*">
-            <TableRow>
+            <TableRow android:gravity="center">
         <Button
             android:id="@+id/btn_measure"
             style="@style/button_style"
-            android:text="@string/btn_measure"
+            android:text="measure"
             android:background="@drawable/button"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"/>
 
-        <Button
-            android:id="@+id/btn_locate"
-            style="@style/button_style"
-            android:text="@string/btn_locate"
-            android:background="@drawable/button"
-            android:layout_marginLeft="4dp"
-            android:layout_marginBottom="4dp" />
+<!--        <Button-->
+<!--            android:id="@+id/btn_locate"-->
+<!--            style="@style/button_style"-->
+<!--            android:text="locate"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginBottom="4dp" />-->
             </TableRow>
 
-        <TableRow>
-        <Button
-            android:id="@+id/btn_gallery"
-            style="@style/button_style"
-            android:text="@string/btn_gallery"
-            android:background="@drawable/button"
-            android:layout_marginRight="4dp"
-            android:layout_marginTop="4dp" />
+<!--        <TableRow>-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_gallery"-->
+<!--            style="@style/button_style"-->
+<!--            android:text="gallery"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:layout_marginRight="4dp"-->
+<!--            android:layout_marginTop="4dp" />-->
 
-        <Button
-            android:id="@+id/btn_exit"
-            style="@style/button_style"
-            android:text="@string/exit"
-            android:background="@drawable/button"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="4dp" />
+<!--        <Button-->
+<!--            android:id="@+id/btn_exit"-->
+<!--            style="@style/button_style"-->
+<!--            android:text="exit"-->
+<!--            android:background="@drawable/button"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginTop="4dp" />-->
 
-        </TableRow>
+<!--        </TableRow>-->
         </TableLayout>
     </LinearLayout>
 <!--<GridLayout-->

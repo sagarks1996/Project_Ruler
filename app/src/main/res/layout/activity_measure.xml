@@ -15,13 +15,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/txt_dist"
             android:textSize="50sp"
             android:textColor="#ff00FD00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txt_dist_cm"
+            android:textSize="20sp"
+            android:textColor="#FF1744"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -31,14 +37,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="bottom|end">
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp">
 
         <Button
             android:id="@+id/btn_remove"
             android:text="@string/btn_remove"
             android:onClick="onRemoveButtonClick"
             android:layout_width="100dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            />
 
     </LinearLayout>
 

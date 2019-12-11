@@ -20,7 +20,7 @@ public class ManualActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
-        setTitle("메뉴얼");
+        setTitle("manual");
 
         imageView = (ImageView)findViewById(R.id.changeImage);
         imageView2 = (ImageView)findViewById(R.id.changeImage2);

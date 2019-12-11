@@ -34,7 +34,7 @@ import java.util.Locale;
 public class MeasureActivity extends Activity {
     private static final String TAG = MeasureActivity.class.getSimpleName();
 
-    private TextView mTextView;
+    private TextView mTextView,cTextView;
     private GLSurfaceView mSurfaceView;
     private MainRenderer mRenderer;
 
@@ -58,8 +58,11 @@ public class MeasureActivity extends Activity {
         hideStatusBarAndTitleBar();
         setContentView(R.layout.activity_measure);
 
-        mTextView = (TextView) findViewById(R.id.txt_dist);
-        mSurfaceView = (GLSurfaceView) findViewById(R.id.gl_surface_view);
+        mTextView = findViewById(R.id.txt_dist);
+        cTextView = findViewById(R.id.txt_dist_cm);
+        mSurfaceView = findViewById(R.id.gl_surface_view);
+
+
 
         DisplayManager displayManager = (DisplayManager) getSystemService(DISPLAY_SERVICE);
         if (displayManager != null) {
@@ -80,6 +83,9 @@ public class MeasureActivity extends Activity {
                 }
             }, null);
         }
+
+
+
 
         mRenderer = new MainRenderer(this, new MainRenderer.RenderCallback() {
             @Override
@@ -209,6 +215,7 @@ public class MeasureActivity extends Activity {
             @Override
             public void run() {
                 double totalDistance = 0.0;
+                double totaldistancecm = 0.0;
                 if (mPoints.size() >= 2)  {
                     for (int i = 0; i < mPoints.size() - 1; i++) {
                         float[] start = mPoints.get(i);
@@ -219,14 +226,24 @@ public class MeasureActivity extends Activity {
                                         + (start[1] - end[1]) * (start[1] - end[1])
                                         + (start[2] - end[2]) * (start[2] - end[2]));
                         totalDistance += distance;
+//                        totaldistancecm = distance*100;
+
                     }
                 }
                 String distanceString = String.format(Locale.getDefault(), "%.2f", totalDistance)
                         + getString(R.string.txt_dist);
+//                String distanceStringcm = String.format(Locale.getDefault(),"%.2f",totaldistancecm)
+//                        +getString(R.string.txt_dist_cm);
+
+
+
                 mTextView.setText(distanceString);
+//                cTextView.setText(distanceStringcm);
             }
         });
     }
+
+
 
     private void hideStatusBarAndTitleBar(){
         requestWindowFeature(Window.FEATURE_NO_TITLE);

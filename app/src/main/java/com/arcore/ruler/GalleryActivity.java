@@ -34,7 +34,7 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-        setTitle("갤러리");
+        setTitle("gallery");
 
     }
 
@@ -123,7 +123,7 @@ public class GalleryActivity extends AppCompatActivity {
                 picPreview.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 picPreview.setImageBitmap(null);
                 viewClickSwitch=false;
-                Toast.makeText(getApplicationContext(), "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Removed.", Toast.LENGTH_SHORT).show();
 
                 onResume();
                 return true;

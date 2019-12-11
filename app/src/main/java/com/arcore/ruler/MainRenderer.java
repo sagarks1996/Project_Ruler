@@ -221,7 +221,7 @@ public class MainRenderer implements GLSurfaceView.Renderer {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Log.v("hari", "저장경로:"+dir_image.toString());
+                Log.v("hari", "Storage path:"+dir_image.toString());
             }
         } catch(Exception e) {
             e.printStackTrace();
